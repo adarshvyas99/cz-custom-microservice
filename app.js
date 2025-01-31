@@ -3,6 +3,10 @@ const os = require('os');
 const app = express();
 const port = 3000;
 
+app.get('/health', (req, res) => {
+  res.status(200).send('Healthy');
+});
+
 app.get('/', (req, res) => {
 
   const htmlContent = `
@@ -72,5 +76,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Microservice listening at http://localhost:${port}`);
+  app.listen(port, '0.0.0.0', () => {
+    console.log(`Microservice listening at http://0.0.0.0:${port}`);
+    })
 });
