@@ -3,7 +3,7 @@ FROM node:14-alpine AS builder
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
-COPY . 
+COPY . .
 
 # Stage 2: Run
 FROM node:14-alpine
