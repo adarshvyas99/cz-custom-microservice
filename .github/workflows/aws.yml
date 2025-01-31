@@ -6,7 +6,7 @@ on:
 
 env:
   AWS_REGION: ap-south-1
-  ECR_REPOSITORY: cz-custom-microservice
+  ECR_REPOSITORY: cz-microservice-repo
   ECS_SERVICE: cz-ecs-service
   ECS_CLUSTER: cz-ecs-cluster
   ECS_TASK_DEFINITION: ecs-task-definition-github.json
