@@ -1,0 +1,27 @@
+{
+    "family": "cz-github-microservice-task",
+    "networkMode": "awsvpc",
+    "executionRoleArn": "arn:aws:iam::717279718863:role/ecsExecutionRole",
+    "taskRoleArn": "arn:aws:iam::717279718863:role/ecsTaskRole",
+    "containerDefinitions": [
+      {
+        "name": "microservice",
+        "image": "717279718863.dkr.ecr.ap-south-1.amazonaws.com/cz-microservice-repo:latest",
+        "cpu": 128,
+        "memory": 256,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 3000,
+            "hostPort": 3000
+          }
+        ]
+      }
+    ],
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512"
+  }
+  

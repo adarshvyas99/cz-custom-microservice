@@ -1,20 +1,13 @@
-# Use the official Node.js image as the base image
-FROM node:14
-
-# Set the working directory
+# Stage 1: Build
+FROM node:14-alpine AS builder
 WORKDIR /usr/src/app
-
-# Copy package.json and package-lock.json
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
+COPY . 
 
-# Copy the rest of the application code
-COPY . .
-
-# Expose the port the app runs on
+# Stage 2: Run
+FROM node:14-alpine
+WORKDIR /usr/src/app
+COPY --from=builder /usr/src/app .
 EXPOSE 3000
-
-# Command to run the application
 CMD ["node", "app.js"]
