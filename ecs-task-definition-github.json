@@ -1,8 +1,8 @@
 {
     "family": "aws-cz-infra-microservice-task",
     "networkMode": "awsvpc",
-    "executionRoleArn": "arn:aws:iam::717279718863:role/ecsExecutionRole",
-    "taskRoleArn": "arn:aws:iam::717279718863:role/ecsTaskRole",
+    "executionRoleArn": "arn:aws:iam::717279718863:role/aws-cz-infra-ecs-execution-role",
+    "taskRoleArn": "arn:aws:iam::717279718863:role/aws-cz-infra-ecs-task-role",
     "containerDefinitions": [
       {
         "name": "microservice",
