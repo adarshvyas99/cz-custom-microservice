@@ -75,8 +75,7 @@ app.get('/', (req, res) => {
   res.send(htmlContent);
 });
 
+
 app.listen(port, () => {
-  app.listen(port, '0.0.0.0', () => {
-    console.log(`Microservice listening at http://0.0.0.0:${port}`);
-    })
-});
+  console.log(`Microservice listening at http://0.0.0.0:${port}`);
+  });
